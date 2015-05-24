@@ -1,0 +1,534 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY obo "http://purl.obolibrary.org/obo/" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="&obo;vicodemo.owl#"
+     xml:base="&obo;vicodemo.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:obo="http://purl.obolibrary.org/obo/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="&obo;vicodemo.owl">
+        <dc:creator>Jie Zheng</dc:creator>
+        <dc:creator>Yongqun &quot;Oliver&quot; He (YH)</dc:creator>
+        <dc:date xml:lang="en">2015-05-05</dc:date>
+        <owl:versionInfo xml:lang="en">Arbor version; 1.0.50</owl:versionInfo>
+        <dc:description>This document imports the whole VICO and includes specifc instance data for use case demo.</dc:description>
+        <dc:creator>Asiyah Yu Lin (YL)</dc:creator>
+        <dc:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+        <owl:imports rdf:resource="https://raw.githubusercontent.com/VICO-ontology/VICO/master/src/ontology/vico.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/ICO_0000170 -->
+
+    <rdf:Description rdf:about="&obo;ICO_0000170">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;IAO_0000136"/>
+                <owl:someValuesFrom rdf:resource="&obo;NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000004 -->
+
+    <owl:Class rdf:about="&obo;VICO_0000004">
+        <rdfs:label xml:lang="en">egg allergic patient</rdfs:label>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty>
+                    <rdf:Description>
+                        <owl:inverseOf rdf:resource="&obo;IAO_0000136"/>
+                    </rdf:Description>
+                </owl:onProperty>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000170"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom>
+                                    <owl:Class>
+                                        <owl:intersectionOf rdf:parseType="Collection">
+                                            <rdf:Description rdf:about="&obo;ICO_0000146"/>
+                                            <owl:Restriction>
+                                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                                            </owl:Restriction>
+                                        </owl:intersectionOf>
+                                    </owl:Class>
+                                </owl:someValuesFrom>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="&obo;NCBITaxon_9606"/>
+        <obo:IAO_0000115>Any patient who has a &apos;Yes&apos; answer for the question of &apos;question whether allergic to egg&apos;</obo:IAO_0000115>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000005 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000005">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 1</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000006 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000006">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000007 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000007">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000010 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000010">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 4</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000011 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000011">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">pateint 5</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000012 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000012">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 6</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000013 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000013">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 7</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000014 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000014">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 8</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000015 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000015">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 9</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000016 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000016">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 10</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000017 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000017">
+        <rdf:type rdf:resource="&obo;VICO_0000009"/>
+        <rdfs:label xml:lang="en">answers of Walgreens patient 11</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000023"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000018 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000018">
+        <rdf:type rdf:resource="&obo;VICO_0000009"/>
+        <rdfs:label xml:lang="en">answers of Walgreens patient 12</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000024"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000023 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000023">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 11</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0000024 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0000024">
+        <rdf:type rdf:resource="&obo;NCBITaxon_9606"/>
+        <rdfs:label xml:lang="en">patient 12</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100001 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100001">
+        <rdf:type rdf:resource="&obo;VICO_0000177"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000144"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000146"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">answers of patient 4</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000010"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100002 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100002">
+        <rdf:type rdf:resource="&obo;VICO_0000177"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000144"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000146"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000173"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">answers of patient 1</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000005"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100003 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100003">
+        <rdf:type rdf:resource="&obo;VICO_0000177"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000146"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000173"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000144"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000173"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">answers of patient 2</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000006"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100004 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100004">
+        <rdf:type rdf:resource="&obo;VICO_0000177"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000146"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000144"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">answers of patient 3</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000007"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100005 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100005">
+        <rdf:type rdf:resource="&obo;VICO_0000008"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000144"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000146"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">answers of Costco patient 5</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000011"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100006 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100006">
+        <rdf:type rdf:resource="&obo;VICO_0000008"/>
+        <rdfs:label xml:lang="en">answers of Costco patient 6</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000012"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100007 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100007">
+        <rdf:type rdf:resource="&obo;VICO_0000008"/>
+        <rdfs:label xml:lang="en">answers of Costco patient 7</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000013"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100008 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100008">
+        <rdf:type rdf:resource="&obo;VICO_0000008"/>
+        <rdfs:label xml:lang="en">answers of Costco patient 8</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000014"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100009 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100009">
+        <rdf:type rdf:resource="&obo;VICO_0000009"/>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000146"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdf:type>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="&obo;ICO_0000144"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="&obo;RO_0002180"/>
+                                <owl:someValuesFrom rdf:resource="&obo;ICO_0000172"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdf:type>
+        <rdfs:label xml:lang="en">answers of Walgreens patient 9</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000015"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/VICO_0100010 -->
+
+    <owl:NamedIndividual rdf:about="&obo;VICO_0100010">
+        <rdf:type rdf:resource="&obo;VICO_0000009"/>
+        <rdfs:label xml:lang="en">answers of Walgreens patient 10</rdfs:label>
+        <obo:IAO_0000136 rdf:resource="&obo;VICO_0000016"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
